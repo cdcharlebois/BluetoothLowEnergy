@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="BluetoothLowEnergy.widget.BluetoothLowEnergy" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+<widget id="BluetoothLowEnergy.widget.BluetoothLowEnergy" needsEntityContext="false" 
+    xmlns="http://www.mendix.com/widget/1.0/">
     <name>BluetoothLowEnergy</name>
     <description>The description of this widget.</description>
-
     <icon />
-
     <properties>
-        <property key="bluetoothName" type="string" required="true" defaultValue="">
+        <property key="objectToCreate" type="entity" required="false" allowNonPersistableEntities="true">
+            <caption>Object to Create</caption>
+            <category>General</category>
+            <description></description>
+        </property>
+        <property key="countField" type="attribute" required="false" isPath="no" entityProperty="objectToCreate">
+            <caption>Count Field</caption>
+            <category>General</category>
+            <description></description>
+            <attributeTypes>
+                <attributeType name="String" />
+            </attributeTypes>
+        </property>
+        <property key="microflowToCall" type="microflow" required="false" entityProperty="objectToCreate">
+            <caption>Microflow To Call</caption>
+            <category>General</category>
+            <description>Should receive an instance of "Object to Create" as a parameter</description>
+            <returnType type="Void"></returnType>
+        </property>
+        <property key="bluetoothName" type="string" required="false" defaultValue="">
             <caption>Bluetooth Device Name</caption>
             <category>General</category>
             <description></description>
