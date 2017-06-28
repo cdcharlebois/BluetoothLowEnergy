@@ -169,6 +169,7 @@ define([
                     )
                 }
             );
+            // a new comment
             var setupPulseListener = new Promise(
                 function(resolve, reject) {
                     self._interval = setInterval(function() {
